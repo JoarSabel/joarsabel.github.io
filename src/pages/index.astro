@@ -1,4 +1,6 @@
 ---
+import Main from "../main.astro";
+
 const pageTitle = "Home Page";
 ---
 
@@ -10,11 +12,12 @@ const pageTitle = "Home Page";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+	<body class="bg-slate-600 text-white">
 
-		<h1>{pageTitle}</h1>
+    <Main pageTitle={pageTitle} pageDescription="bla">
+      <marquee direction="left" scrollAmount="10">
+        <p class="text-red-500 hover:animate-bounce"> SUPER TEXT </p>
+      </marquee>
+    </Main>
 	</body>
 </html>

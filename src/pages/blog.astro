@@ -1,4 +1,6 @@
 ---
+import Main from "../main.astro";
+
 const pageTitle = "Blog";
 ---
 
@@ -10,22 +12,19 @@ const pageTitle = "Blog";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body>
+	<body class="bg-slate-600 text-white">
 
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Main pageTitle={pageTitle}>
+      <h2>The bloggening!</h2>
 
-		<h1>{pageTitle}</h1>
-    <h2>The bloggening!</h2>
+      <p>This is where the blogging will happen!</p>
 
-    <p>This is where the blogging will happen!</p>
-
-    <p> Posts so far: </p>
-    <ul>
-      <li>
-        <a href="/posts/firstPost.md">First Post</a>
-      </li>
-    </ul>
+      <p> Posts so far: </p>
+      <ul>
+        <li>
+          <a href="/posts/firstPost">First Post</a>
+        </li>
+      </ul>
+    </Main>
 	</body>
 </html>
