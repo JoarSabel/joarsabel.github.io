@@ -1,5 +1,26 @@
 ---
+const pageTitle = "About me";
 
+const identity: Record<string, any> = {
+  firstName: "Joar",
+  country: "Finland",
+  occupation: "Student / Full-stack developer",
+  hobbies: "Grand Strategy Games, History, Programming",
+};
+
+const skills: String[] = [
+  "PHP",
+  "Laravel",
+  "HTML",
+  "CSS",
+  "Vue",
+  "Typescript",
+  "JavaScript",
+  "Astro",
+];
+
+const finished: boolean = false;
+const goal: number = 2;
 ---
 
 <html lang="en">
@@ -8,7 +29,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 
@@ -16,11 +37,29 @@
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 
-		<h1>About stuff!</h1>
+		<h1>{pageTitle}</h1>
     <h2>... and more stuff!</h2>
 
-    <p>Following the astro tutorial to craete a basic blog and get get familiar with the astro framework.</p>
+    <p>Who am I?</p>
+    <ul>
+      <li>
+        My name is {identity.firstName}.
+      </li>
+      <li>
+        I live in {identity.country} and I am a {identity.occupation}.
+      </li>
+      <li>
+        My hobbies include: {identity.hobbies} 
+      </li>
+    </ul>
 
+    <p> Some of my skills are: </p>
+    <ul>
+      {skills.map((skill) => <li> {skill} </li>)}
+    </ul>
+
+    {goal === 2 ? <p> My goal is to finish this in 2 days </p> : <p> My goal is not 2 days </p> }
+    {finished && <p> I am finished with this! </p>}
     <p>More stuff to come!</p>
 	</body>
 </html>
