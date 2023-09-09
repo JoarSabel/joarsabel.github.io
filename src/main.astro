@@ -1,0 +1,33 @@
+---
+import Navigation from './components/Navigation.astro';
+import Footer from './components/Footer.astro';
+
+export interface Props {
+  pageTitle: string,
+  pageDescription?: string,
+}
+
+const {pageTitle, pageDescription}: Props = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{pageTitle}</title>
+</head>
+<div class="flex flex-col min-h-screen">
+  <Navigation/>
+  <div class="flex-grow flex flex-row h-full"> 
+    <div class="w-[35vh]"/>  
+    <div class="w-full h-full content-center justify-center text-center">
+      <h1 class="text-3xl">{pageTitle}</h1>
+      {pageDescription && <p> {pageDescription} </p>}
+      <slot/>
+    </div>
+    <div class="w-[35vh]"/>  
+  </div>
+<Footer/>
+</div>
+
