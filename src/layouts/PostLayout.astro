@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<div class="bg-slate-600 text-white">
+  <BaseLayout pageTitle={frontmatter.title}>
+    <div>
+      <p>Written by {frontmatter.author}</p>
+      <p>Published on: {frontmatter.pubDate}</p>
+    </div>
+    <slot />
+  </BaseLayout>
+</div>
+<!-- <head> -->
+<!--   <meta charset="utf-8" /> -->
+<!--   <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<!--   <meta name="viewport" content="width=device-width" /> -->
+<!--   <meta name="generator" content={Astro.generator} /> -->
+<!--   <title>{pageTitle}</title> -->
+<!-- </head> -->
+<!-- <div class="flex flex-col min-h-screen"> -->
+<!--   <Navigation /> -->
+<!--   <div class="flex-grow flex flex-row h-full"> -->
+<!--     <div class="w-[35vh]"></div> -->
+<!--     <div class="w-full h-full content-center justify-center text-center"> -->
+<!--       <h1>{frontmatter.title}</h1> -->
+<!--       <p>Written by {frontmatter.author}</p> -->
+<!--       <p>Published on: {frontmatter.pubDate}</p> -->
+<!--       <slot /> -->
+<!--     </div> -->
+<!--     <div class="w-[35vh]"></div> -->
+<!--   </div> -->
+<!--   <Footer /> -->
+<!-- </div> -->
