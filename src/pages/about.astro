@@ -1,5 +1,5 @@
 ---
-import Main from "../main.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About me";
 
@@ -28,16 +28,15 @@ const skillColor = "navy";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body class="bg-slate-600 text-white">
-
-    <Main pageTitle={pageTitle}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-slate-600 text-white">
+    <BaseLayout pageTitle={pageTitle}>
       <h2>... and more stuff!</h2>
 
       <p>Who am I?</p>
@@ -49,26 +48,31 @@ const skillColor = "navy";
           I live in {identity.country} and I am a {identity.occupation}.
         </li>
         <li>
-          My hobbies include: {identity.hobbies} 
+          My hobbies include: {identity.hobbies}
         </li>
       </ul>
 
-      <p> Some of my skills are: </p>
+      <p>Some of my skills are:</p>
       <ul>
         {skills.map((skill) => <li class="skill"> {skill} </li>)}
       </ul>
 
-      {goal === 2 ? <p> My goal is to finish this in 2 days </p> : <p> My goal is not 2 days </p> }
+      {
+        goal === 2 ? (
+          <p> My goal is to finish this in 2 days </p>
+        ) : (
+          <p> My goal is not 2 days </p>
+        )
+      }
       {finished && <p> I am finished with this! </p>}
       <p>More stuff to come!</p>
-    </Main>
-	</body>
+    </BaseLayout>
+  </body>
 
   <style define:vars="{{skillColor}}">
-   .skill {
-     color: var(--skillColor);
-     font-weight: bold;
-   }
-
+    .skill {
+      color: var(--skillColor);
+      font-weight: bold;
+    }
   </style>
 </html>
