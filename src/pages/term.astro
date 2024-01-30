@@ -1,0 +1,78 @@
+---
+const pageTitle = "Terminal Mode";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div id="terminal" class="flex flex-col fixed justify-between bg-black p-2 top-0 left-0 right-0 font-mono h-full">
+      <div class="text-lime-500"id="terminal-output"></div>
+      <div class="flex flex-row">
+        <p class="w-2 bg-black text-lime-500 p-1 mr-2">></p>
+        <input class="bg-black outline-none border-none text-lime-500 font-mono w-full p-1" type="text" id="terminal-input" placeholder="Enter command...">
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+
+function initializeTerminal() {
+  const terminalInput = document.getElementById('terminal-input');
+  // const terminalOutput = document.getElementById('terminal-output');
+
+  terminalInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      const command = (event.target as any).value;
+      handleTerminalCommands(command);
+      (event.target as any).value = '';
+    }
+  });
+}
+
+function handleTerminalCommands(command: string) {
+  const terminalOutput = document.getElementById('terminal-output');
+  let time = new Date().toTimeString();
+  terminalOutput.innerHTML += time.split(' ')[0]
+  terminalOutput.innerHTML += ' > ' + command + '<br>'
+  switch (command.toLowerCase()) {
+    case 'help':
+      terminalOutput.innerHTML += `Available commands: <br> 
+          help -  This piece of text <br> 
+          about - About me <br>
+          exit - Escape this madness <br>  
+      `;
+      break;
+    case 'about':
+      terminalOutput.innerHTML += `This is peak website:ing <br>
+        Name: Joar <br>
+        Job: Student <br>
+        Hobbies: Things & Stuff <br>
+      `;
+      break;
+    case 'clear':
+      terminalOutput.innerHTML = '';
+      break;
+    case 'exit':
+      location.href = '/';
+      break;
+    default:
+      terminalOutput.innerHTML += `Command not found: ${command}. Try 'help' for help<br>`;
+  }
+  terminalOutput.innerHTML += '<br>'
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  initializeTerminal();
+});
+</script>
+
+<style>
+
+</style>
