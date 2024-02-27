@@ -1,27 +1,45 @@
 ---
 ---
-<header class="flex flex-row bg-nord1 border-b-2 border-nord2 px-2 py-1 fixed z-10 w-full shadow-md pb-1 text-center justify-center">
-  <div class="flex flex-row">
+<header class="flex flex-row bg-nord1 border-b-2 border-nord2 px-2 py-1 md:fixed z-10 w-full shadow-md pb-1 text-center md:justify-center">
+  <div class="hidden md:flex flex-row">
     <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1" href="/">Home</a>
-    <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1" href="/about/">About</a>
+    <a class="mr-2 text-2xl p-1 hover:bg-nord10 rounded transition-all duration-500 mt-1 mb-1" href="/about/">About</a>
     <div>
       <a class="mr-2 text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600" href="/">joar.a.developer</a>
       <p class="italic text-slate-400">I'm a hwot?</p>
     </div>
-    <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1 " href="/blog/">Blog</a>
-    <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1 " href="/term/">Term</a>
+    <a class="mr-2 text-2xl p-1 hover:bg-nord15 rounded transition-all duration-500 mt-1 mb-1 " href="/blog/">Blog</a>
+    <a class="mr-2 text-2xl p-1 hover:bg-nord14 rounded transition-all duration-500 mt-1 mb-1 " href="/term/">Term</a>
+  </div>
+
+    <div class="dropdown-menu flex hidden flex-col absolute bg-nord1 border border-nord2 text-left mt-16">
+      <a class="p-2 hover:bg-nord11 rounded transition-all duration-500" href="/">Home</a>
+      <a class="p-2 hover:bg-nord10 rounded transition-all duration-500" href="/about/">About</a>
+      <a class="p-2 hover:bg-nord15 rounded transition-all duration-500" href="/blog/">Blog</a>
+      <a class="p-2 hover:bg-nord14 rounded transition-all duration-500" href="/term/">Term</a>
+    </div>
+  <div class="flex md:hidden flex-row">
+    <button class="md:hidden focus:outline-none" id="dropdown-toggle">
+      <svg class="h-6 w-6 text-slate-300" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <div>
+      <a class="mr-2 text-4xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600" href="/">JS</a>
+    </div>
   </div>
 </header>
 
 <script>
-  let button = document.querySelector('#myButton');
-  button?.addEventListener('click', function() {
-   let event = new CustomEvent('buttonClicked', 
-      { 
-        detail: { message: 'Button was clicked!' }, 
-        bubbles: true,
-        cancelable: true
-      });
-   window.dispatchEvent(event);
+  document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    if (!dropdownToggle || !dropdownMenu) {
+      return;
+    }
+    dropdownToggle.addEventListener('click', function() {
+      dropdownMenu.classList.toggle('hidden');
+    });
   });
 </script>

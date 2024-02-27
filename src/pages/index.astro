@@ -18,42 +18,93 @@ const pageDesc = "Welcome";
       <marquee direction="left" scrollAmount="10">
         <p class="text-red-500 hover:animate-bounce">SUPER TEXT</p>
       </marquee>
-      <div class="flex flex-col">
-        <div class="flex flex-row">
-          <section class="flex-1 pl-8 justify-center"> 
-            <div class="border rounded-md border-slate-500">
-              <h2 class="text-lg italic">
-                Who Am I?
-              </h2>
-              <p>
-                My name is Joar and sometimes I consider myself a developer/software engineer, depending on the degree of impostor syndrome I currently suffer from. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus commodi fuga sed labore odio quidem itaque possimus corrupti voluptatum modi quibusdam fugiat, nihil quaerat, id iste, est mollitia assumenda esse.
-              </p>
+      <div class="flex flex-col flex-warp sm:flex-row">
+        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+          <div class="border rounded-md border-slate-500 p-6 text-center">
+            <h2 class="text-xl font-bold mb-3">About Me</h2>
+            <p class="text-slate-300">
+              I'm Joar, software engineer and developer. 
+              When I'm not studying computer engineering at Åbo Akademi University, 
+              I dabble in various software technologies and experiment with new projects.
+            </p>
+            <div class="mt-4">
+              <a 
+                href="https://www.github.com/JoarSabel" 
+                target="_blank" 
+                class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-r from-nord11 to-nord10 transition duration-300 ease-in-out"
+              >
+                Connect with me
+              </a>
             </div>
-          </section>
-          <section class="flex-1 px-3 justify-center"> 
-            <div class="border rounded-md border-slate-500">
-              <h2 class="text-lg italic">
-                What Do I Do?
-              </h2>
-              <p>
-                I study software/computer engineering at Åbo Akademi Univeristy, and dabble in various software technologies in my free time. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa magnam iusto quas iste harum ducimus distinctio accusamus voluptatum suscipit vitae praesentium quisquam, quaerat incidunt, enim id nam laboriosam ut!
-              </p>
+          </div>
+        </section>
+        <section class="flex-1 mx-3 my-2 grow-1 justify-center"> 
+          <div class="border rounded-md border-slate-500 p-6 text-center">
+            <h2 class="text-xl font-bold mb-3">My Skills & Projects</h2>
+            <p class="text-slate-300">
+              Avid PHP&Laravel enjoyer. (Not legally or officially) Certified Vuetiful Person. General Web Development Enjoyer. Occasional AI Dabbler. Penguin Power. Paint Master.
+            </p>
+            <div class="mt-4">
+              <a href="https://www.github.com/JoarSabel" 
+                class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-r from-nord10 to-nord11 transition duration-300 ease-in-out"
+              >
+                View my projects
+              </a>
             </div>
-          </section>
-          <section class="flex-1 pr-8 justify-center"> 
-            <div class="border rounded-md border-slate-500">
-              <h2 class="text-lg italic">
-                Why Do I Do?
-              </h2>
-              <p>
-                I like solving problems and sitting in front of the computer, which has led me down the path of software engingeering. Originally I wanted to develop games
-                but soon realized, that it was not going to be in my future. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, at officiis. Ad sed reprehenderit velit quibusdam a, vitae fuga molestiae assumenda veritatis aperiam harum asperiores minima ipsum perspiciatis, inventore maiores!
-              </p>
+          </div>
+        </section>
+        <section class="flex-1 mx-3 my-2 justify-center"> 
+          <div class="border rounded-md border-slate-500 h-full p-6 text-center">
+            <h2 class="text-xl font-bold mb-3">My Passion</h2>
+            <p class="text-slate-300">
+              I've always been fascinated by problem-solving and the potential of technology. 
+              I love solving every day problems using technology, and also non-every-day problems, so just problems I guess.
+            </p>
+            <div class="mt-4">
+              <a href="blog/" class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-r from-nord11 to-nord10 transition duration-300 ease-in-out">
+                My lastest posts
+              </a>
             </div>
-          </section>
-        </div>
-        <span class="grow"></span>
-        <div> THird thing</div>
+          </div>
+        </section>
+      </div>
+
+      <!--Section Separator-->
+      <div class="flex flex-col flex-warp sm:flex-row sm:mx-32">
+        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+          <div class="border rounded-md border-slate-500 p-6 text-center">
+            <h2 class="text-xl font-bold mb-3">Some Social Media Thing?</h2>
+            <p class="text-slate-300">
+              This is a box where social media things will go in the future. I think.
+            </p>
+            <div class="mt-4">
+              <a 
+                href="https://www.github.com/JoarSabel" 
+                target="_blank" 
+                class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-r from-nord11 to-nord10 transition duration-300 ease-in-out"
+              >
+                Connect with me
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+          <div class="border rounded-md border-slate-500 p-6 text-center">
+            <h2 class="text-xl font-bold mb-3">Other contact info/TBI</h2>
+            <p class="text-slate-300">
+              Can't decide on this section yet but five boxes look good so I will have to have 5 of them.
+            </p>
+            <div class="mt-4">
+              <a 
+                href="https://www.github.com/JoarSabel" 
+                target="_blank" 
+                class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-r from-nord11 to-nord10 transition duration-300 ease-in-out"
+              >
+                Connect with me
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </BaseLayout>
   </body>
