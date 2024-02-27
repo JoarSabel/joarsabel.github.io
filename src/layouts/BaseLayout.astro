@@ -16,6 +16,11 @@ const { pageTitle, pageDescription }: Props = Astro.props;
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={pageDescription || "This is a default description"} />
+  <meta name="og:title" content={pageTitle}/>
+  <meta name="og:description" content={pageDescription}/>
+  <meta name="og:type" content="Website"/>
+  <meta name="og:url" content="TBI"/>
+  <meta name="og:img" content="TBI"/>
   <title>{pageTitle}</title>
 </head>
 <div class="flex flex-col min-h-screen">

@@ -11,11 +11,6 @@ const pageDesc = "Welcome";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width"/>
     <meta name="generator" content={Astro.generator}/>
-    <meta name="og:title" content={pageTitle}/>
-    <meta name="og:description" content={pageDesc}/>
-    <meta name="og:type" content="Website"/>
-    <meta name="og:url" content="TBI"/>
-    <meta name="og:img" content="TBI"/>
     <title>{pageTitle}</title>
   </head>
   <body class="bg-nord1 text-white">
@@ -25,21 +20,37 @@ const pageDesc = "Welcome";
       </marquee>
       <div class="flex flex-col">
         <div class="flex flex-row">
-          <div class="flex-1 pl-8 justify-center"> 
+          <section class="flex-1 pl-8 justify-center"> 
             <div class="border rounded-md border-slate-500">
-              SOMETHING
+              <h2 class="text-lg italic">
+                Who Am I?
+              </h2>
+              <p>
+                My name is Joar and sometimes I consider myself a developer/software engineer, depending on the degree of impostor syndrome I currently suffer from. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus commodi fuga sed labore odio quidem itaque possimus corrupti voluptatum modi quibusdam fugiat, nihil quaerat, id iste, est mollitia assumenda esse.
+              </p>
             </div>
-          </div>
-          <div class="flex-1 px-3 justify-center"> 
+          </section>
+          <section class="flex-1 px-3 justify-center"> 
             <div class="border rounded-md border-slate-500">
-              AND
+              <h2 class="text-lg italic">
+                What Do I Do?
+              </h2>
+              <p>
+                I study software/computer engineering at Åbo Akademi Univeristy, and dabble in various software technologies in my free time. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa magnam iusto quas iste harum ducimus distinctio accusamus voluptatum suscipit vitae praesentium quisquam, quaerat incidunt, enim id nam laboriosam ut!
+              </p>
             </div>
-          </div>
-          <div class="flex-1 pr-8 justify-center"> 
+          </section>
+          <section class="flex-1 pr-8 justify-center"> 
             <div class="border rounded-md border-slate-500">
-              ELSE
+              <h2 class="text-lg italic">
+                Why Do I Do?
+              </h2>
+              <p>
+                I like solving problems and sitting in front of the computer, which has led me down the path of software engingeering. Originally I wanted to develop games
+                but soon realized, that it was not going to be in my future. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, at officiis. Ad sed reprehenderit velit quibusdam a, vitae fuga molestiae assumenda veritatis aperiam harum asperiores minima ipsum perspiciatis, inventore maiores!
+              </p>
             </div>
-          </div>
+          </section>
         </div>
         <span class="grow"></span>
         <div> THird thing</div>
