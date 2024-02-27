@@ -1,19 +1,19 @@
 ---
 ---
-
-<div class="flex flex-row bg-nord1 border-b-2 border-nord2 px-2 py-1 fixed z-10 w-full shadow-md pb-1">
-  <a class="mr-2 text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600" href="/">joar.a.developer</a>
-  <span class="grow"></span>
-  <div class="flex flex-row ">
+<header class="flex flex-row bg-nord1 border-b-2 border-nord2 px-2 py-1 fixed z-10 w-full shadow-md pb-1 text-center justify-center">
+  <div class="flex flex-row">
     <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1" href="/">Home</a>
     <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1" href="/about/">About</a>
+    <div>
+      <a class="mr-2 text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600" href="/">joar.a.developer</a>
+      <p class="italic text-slate-400">I'm a hwot?</p>
+    </div>
     <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1 " href="/blog/">Blog</a>
-    <button class="bg-red-500 rounded mr-4 p-1 mt-1 mb-1" id="myButton" onclick="location.href = '/term/'">term</button>
+    <a class="mr-2 text-2xl p-1 hover:bg-nord11 rounded transition-all duration-500 mt-1 mb-1 " href="/term/">Term</a>
   </div>
-</div>
+</header>
 
 <script>
-
   let button = document.querySelector('#myButton');
   button?.addEventListener('click', function() {
    let event = new CustomEvent('buttonClicked', 

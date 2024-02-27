@@ -1,26 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "Home Page";
+const pageTitle = "$HOME";
+const pageDesc = "Welcome";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <meta name="og:title" content={pageTitle}/>
+    <meta name="og:description" content={pageDesc}/>
+    <meta name="og:type" content="Website"/>
+    <meta name="og:url" content="TBI"/>
+    <meta name="og:img" content="TBI"/>
     <title>{pageTitle}</title>
   </head>
   <body class="bg-nord1 text-white">
-    <BaseLayout pageTitle={pageTitle} pageDescription="bla">
+    <BaseLayout pageTitle={pageTitle} pageDescription={pageDesc}>
       <marquee direction="left" scrollAmount="10">
         <p class="text-red-500 hover:animate-bounce">SUPER TEXT</p>
       </marquee>
       <div class="flex flex-col">
         <div class="flex flex-row">
-          <div class="flex-1"> SOMETHING </div>
-          <div class="flex-1"> ELSE </div>
+          <div class="flex-1 pl-8 justify-center"> 
+            <div class="border rounded-md border-slate-500">
+              SOMETHING
+            </div>
+          </div>
+          <div class="flex-1 px-3 justify-center"> 
+            <div class="border rounded-md border-slate-500">
+              AND
+            </div>
+          </div>
+          <div class="flex-1 pr-8 justify-center"> 
+            <div class="border rounded-md border-slate-500">
+              ELSE
+            </div>
+          </div>
         </div>
         <span class="grow"></span>
         <div> THird thing</div>
