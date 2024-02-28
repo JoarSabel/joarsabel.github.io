@@ -13,16 +13,16 @@ const pageDesc = "Welcome";
     <meta name="generator" content={Astro.generator}/>
     <title>{pageTitle}</title>
   </head>
-  <body class="bg-nord1 text-white">
+  <body class="bg-nord5 dark:bg-nord1 dark:text-white">
     <BaseLayout pageTitle={pageTitle} pageDescription={pageDesc}>
       <marquee direction="left" scrollAmount="10">
         <p class="text-red-500 hover:animate-bounce">SUPER TEXT</p>
       </marquee>
       <div class="flex flex-col flex-warp sm:flex-row h-1/2">
-        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+        <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
           <div class="border rounded-md border-nord11 h-3/4 p-6 text-center">
             <h2 class="text-xl font-bold mb-3">About Me</h2>
-            <p class="text-slate-300">
+            <p class="text-black dark:text-slate-300">
               I'm Joar, software engineer and developer. 
               When I'm not studying computer engineering at Åbo Akademi University, 
               I dabble in various software technologies and experiment with new projects.
@@ -30,7 +30,7 @@ const pageDesc = "Welcome";
             <div class="mt-4">
               <a 
                 href="about/"
-                target="_blank"
+                target="_blank" 
                 class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-t from-nord11 to-nord10 transition duration-300 ease-in-out"
               >
                 More about me ->
@@ -38,13 +38,13 @@ const pageDesc = "Welcome";
             </div>
           </div>
         </section>
-        <section class="flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
+        <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
           <div class="border rounded-md border-nord12 h-3/4 p-6 text-center">
             <h2 class="text-xl font-bold mb-3">My Skills & Projects</h2>
-            <p class="text-slate-300">
+            <p class="text-black dark:text-slate-300">
               PHP&Laravel enjoyer. (Not legally or officially) Certified Vue-tiful Person. 
               General Web Development Enjoyer. Occasional AI Dabbler. Penguin Power. Learning to
-              design UI that does not act as sandpaper on the eyes 
+              design UI that does not act as sandpaper on the eyes
             </p>
             <div class="mt-4">
               <a href="https://www.github.com/JoarSabel" 
@@ -55,10 +55,10 @@ const pageDesc = "Welcome";
             </div>
           </div>
         </section>
-        <section class="flex-1 mx-3 my-2 h-full justify-center"> 
+        <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
           <div class="border rounded-md border-nord14 h-3/4 p-6 text-center">
             <h2 class="text-xl font-bold mb-3">My Passion</h2>
-            <p class="text-slate-300">
+            <p class="text-black dark:text-slate-300">
               I've always been fascinated by problem-solving and the potential of technology. 
               I love solving every day problems using technology, and also non-every-day problems, so just problems I guess.
             </p>
@@ -73,10 +73,10 @@ const pageDesc = "Welcome";
 
       <!--Section Separator-->
       <div class="flex flex-col flex-warp sm:flex-row sm:mx-32">
-        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+        <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
           <div class="border rounded-md border-nord15 p-6 text-center">
             <h2 class="text-xl font-bold mb-3">Some Social Media Thing?</h2>
-            <p class="text-slate-300">
+            <p class="text-black dark:text-slate-300">
               This is a box where social media things will go in the future. I think.
             </p>
             <div class="mt-4">
@@ -90,10 +90,10 @@ const pageDesc = "Welcome";
             </div>
           </div>
         </section>
-        <section class="flex-1 h-full mx-3 my-2 justify-center"> 
+        <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
           <div class="border rounded-md border-nord10 p-6 text-center">
             <h2 class="text-xl font-bold mb-3">Other contact info/TBI</h2>
-            <p class="text-slate-300">
+            <p class="text-black dark:text-slate-300">
               Can't decide on this section yet but five boxes look good so I will have to have 5 of them.
             </p>
             <div class="mt-4">

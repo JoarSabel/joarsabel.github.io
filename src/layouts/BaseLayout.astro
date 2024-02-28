@@ -26,13 +26,13 @@ const { pageTitle, pageDescription }: Props = Astro.props;
 <div class="flex flex-col min-h-screen">
   <Navigation />
   <main class="flex-grow flex flex-row h-full overflow-auto md:pt-[10vh] shadow-lg shadow-black">
-    <div class="w-[25vh] bg-gradient-to-r from-nord2 to-nord1"></div>
+    <div class="w-[25vh] bg-gradient-to-l from-nord5 to-nord4 dark:bg-gradient-to-r dark:from-nord2 dark:to-nord1"></div>
     <div class="w-full h-full content-center justify-center text-center pt-6">
       <h1 class="text-5xl text-center">{pageTitle}</h1>
-      {pageDescription && <p> {pageDescription} </p>}
+      {pageDescription && <p class="mt-4"> {pageDescription} </p>}
       <slot />
     </div>
-    <div class="w-[25vh] bg-gradient-to-l from-nord2 to-nord1"></div>
+    <div class="w-[25vh] bg-gradient-to-r from-nord5 to-nord4 dark:bg-gradient-to-l dark:from-nord2 dark:to-nord1"></div>
   </main>
   <Footer/>
 </div>
