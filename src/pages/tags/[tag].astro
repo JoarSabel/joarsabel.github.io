@@ -21,29 +21,20 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{tag}</title>
-  </head>
-  <body class="bg-nord5 dark:bg-nord1 dark:text-white">
-    <BaseLayout pageTitle={tag}>
-      <p>Posts tagged with {tag}</p>
-      <div class="flex flex-row justify-center content-center">
-          <div class="flex-1 w-1/4"></div lang="en">
-          <ul class="flex-3 list-none p-0 grow">
-            {posts.map((post: { slug: string; data: { title: any; description: any; pubDate: any; tags: any; }; }) => <BlogPostCard 
-              url={`/posts/${post.slug}/`} 
-              title={post.data.title} 
-              description={post.data.description} 
-              pubDate={post.data.pubDate}
-              tags={post.data.tags}
-            />)}
-          </ul>
-          <div class="flex-1 w-1/4"></div>
-        </div>
-    </BaseLayout>
-  </body>
+  <BaseLayout pageTitle={tag} htmlTitle={tag}>
+    <p>Posts tagged with {tag}</p>
+    <div class="flex flex-row justify-center content-center">
+        <div class="flex-1 w-1/4"></div lang="en">
+        <ul class="flex-3 list-none p-0 grow">
+          {posts.map((post: { slug: string; data: { title: any; description: any; pubDate: any; tags: any; }; }) => <BlogPostCard 
+            url={`/posts/${post.slug}/`} 
+            title={post.data.title} 
+            description={post.data.description} 
+            pubDate={post.data.pubDate}
+            tags={post.data.tags}
+          />)}
+        </ul>
+        <div class="flex-1 w-1/4"></div>
+      </div>
+  </BaseLayout>
 </html>

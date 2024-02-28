@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About me";
+const pageTitle = "About me, Joar";
+const pageDesc = "So, Who am I, really? (This page is a bit of a work-in-progress)";
+const htmlTitle = "whoami";
 
 const identity: Record<string, any> = {
   firstName: "Joar",
@@ -28,46 +30,37 @@ const skillColor = "navy";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="bg-nord5 dark:bg-nord1 dark:text-white">
-    <BaseLayout pageTitle={pageTitle}>
-      <h2>... and more stuff!</h2>
+  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={pageDesc}>
+    <h2>... and more stuff!</h2>
 
-      <p>Who am I?</p>
-      <ul>
-        <li>
-          My name is {identity.firstName}.
-        </li>
-        <li>
-          I live in {identity.country} and I am a {identity.occupation}.
-        </li>
-        <li>
-          My hobbies include: {identity.hobbies}
-        </li>
-      </ul>
+    <p>Who am I?</p>
+    <ul>
+      <li>
+        My name is {identity.firstName}.
+      </li>
+      <li>
+        I live in {identity.country} and I am a {identity.occupation}.
+      </li>
+      <li>
+        My hobbies include: {identity.hobbies}
+      </li>
+    </ul>
 
-      <p>Some of my skills are:</p>
-      <ul>
-        {skills.map((skill) => <li class="skill"> {skill} </li>)}
-      </ul>
+    <p>Some of my skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill"> {skill} </li>)}
+    </ul>
 
-      {
-        goal === 2 ? (
-          <p> My goal is to finish this in 2 days </p>
-        ) : (
-          <p> My goal is not 2 days </p>
-        )
-      }
-      {finished && <p> I am finished with this! </p>}
-      <p>More stuff to come!</p>
-    </BaseLayout>
-  </body>
+    {
+      goal === 2 ? (
+        <p> My goal is to finish this in 2 days </p>
+      ) : (
+        <p> My goal is not 2 days </p>
+      )
+    }
+    {finished && <p> I am finished with this! </p>}
+    <p>More stuff to come!</p>
+  </BaseLayout>
 
   <style define:vars="{{skillColor}}">
     .skill {

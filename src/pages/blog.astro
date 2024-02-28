@@ -3,45 +3,37 @@ import { getCollection } from 'astro:content';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 
-const pageTitle = "Blog";
+const htmlTitle = "Blog";
 const pageDesc = 
   `
     A collection of thinkeroos about just about anything 
     related to something I am interested in at the moment.
     There will be no guarantee of quality nor of quantity,
-    these are but the loosely connected ramblings of a madman
+    these are but my loosely connected ramblings
   `;
+const pageTitle = "Blog Section | cat my_thoughts.txt"
+
 const allPosts = await getCollection("posts");
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="bg-nord5 dark:bg-nord1 dark:text-white">
-    <BaseLayout pageTitle={pageTitle} pageDescription={pageDesc}>
-      <div>
-        <p>If you are looking for a post with a specific tag/content type, please check out the <a class="underline" href="/tags/">tag index</a></p>
-        <h2 class="flex-1 mt-12 text-2xl">Posts so far:</h2>
-        <div class="flex flex-row justify-center content-center">
-          <div class="flex-1 w-1/4"></div>
-          <ul class="flex-3 list-none p-0 grow">
-            <!--{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
-            {allPosts.map((post: any) => <BlogPostCard 
-              url={`/posts/${post.slug}/`} 
-              title={post.data.title} 
-              description={post.data.description} 
-              pubDate={post.data.pubDate}
-              tags={post.data.tags}
-            />)}
-          </ul>
-          <div class="flex-1 w-1/4"></div>
-        </div>
+  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={pageDesc}>
+    <div>
+      <p>If you are looking for a post with a specific tag/content type, please check out the <a class="underline" href="/tags/">tag index</a></p>
+      <h2 class="flex-1 mt-12 text-2xl">Posts so far:</h2>
+      <div class="flex flex-row justify-center content-center">
+        <div class="flex-1 w-1/4"></div>
+        <ul class="flex-3 list-none p-0 grow">
+          {allPosts.map((post: any) => <BlogPostCard 
+            url={`/posts/${post.slug}/`} 
+            title={post.data.title} 
+            description={post.data.description} 
+            pubDate={post.data.pubDate}
+            tags={post.data.tags}
+          />)}
+        </ul>
+        <div class="flex-1 w-1/4"></div>
       </div>
-    </BaseLayout>
-  </body>
+    </div>
+  </BaseLayout>
 </html>
