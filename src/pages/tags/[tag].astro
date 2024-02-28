@@ -1,14 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
 
-export async function getStaticPaths(): any {
-  const allPosts: any = await Astro.glob('../posts/*.md');
+export async function getStaticPaths(): Promise<any> {
+  const allPosts = await getCollection("posts");
 
-  const uniqueTags = [...new Set(allPosts.map((post: { frontmatter: { tags: any; }; }) => post.frontmatter.tags).flat())];
+  const uniqueTags = [...new Set(allPosts.map((post: { frontmatter: { tags: any; }; }) => post.data.tags).flat())];
 
   return uniqueTags.map((tag: any) => {
-    const filteredPosts = allPosts.filter((post: { frontmatter: { tags: string | any[]; }; }) => post.frontmatter.tags.includes(tag));
+    const filteredPosts = allPosts.filter((post: { frontmatter: { tags: string | any[]; }; }) => post.data.tags.includes(tag));
     return {
       params: { tag },
       props: { posts: filteredPosts },
@@ -33,13 +34,12 @@ const { posts } = Astro.props;
       <div class="flex flex-row justify-center content-center">
           <div class="flex-1 w-1/4"></div lang="en">
           <ul class="flex-3 list-none p-0 grow">
-            <!--{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
-            {posts.map((post: { url: any; frontmatter: { title: any; description: any; pubDate: any; tags: any; }; }) => <BlogPostCard 
-              url={post.url} 
-              title={post.frontmatter.title} 
-              description={post.frontmatter.description} 
-              pubDate={post.frontmatter.pubDate}
-              tags={post.frontmatter.tags}
+            {posts.map((post: { slug: string; data: { title: any; description: any; pubDate: any; tags: any; }; }) => <BlogPostCard 
+              url={`/posts/${post.slug}/`} 
+              title={post.data.title} 
+              description={post.data.description} 
+              pubDate={post.data.pubDate}
+              tags={post.data.tags}
             />)}
           </ul>
           <div class="flex-1 w-1/4"></div>
