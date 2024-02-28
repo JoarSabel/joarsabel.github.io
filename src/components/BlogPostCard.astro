@@ -5,7 +5,7 @@ const {title, url, description, pubDate} = Astro.props;
 
 <li class="w-full mt-4">
     <a class="w-full" href={url} >
-      <div class="flex flex-col w-full border border-nord3 rounded hover:border-nord14">
+      <div class="flex flex-col w-full bg-nord4 dark:bg-nord1 border border-nord3 rounded hover:border-nord14">
         <time datetime={pubDate} class="text-slate-400">{pubDate.toString().slice(0,16)}</time>
         <h2 class="text-2xl">
           {title}
