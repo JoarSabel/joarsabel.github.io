@@ -1,5 +1,12 @@
 ---
+import { getCollection } from "astro:content";
+
 const pageTitle = "Terminal Mode";
+const posts = await getCollection('posts');
+
+// leave this for future work I guess...
+const slugs = [...new Set(posts.map((post: any) => post.slug).flat())];
+const titles = [...new Set(posts.map((post: any) => post.data.title).flat())];
 ---
 
 <html lang="en">
@@ -49,19 +56,27 @@ function handleTerminalCommands(command: string) {
 
   terminalOutput.innerHTML += time.split(' ')[0]
   terminalOutput.innerHTML += ' > ' + command + '<br>'
-  switch (command.toLowerCase()) {
+  switch (command.toLowerCase().trim()) {
     case 'help':
       terminalOutput.innerHTML += `Available commands: <br> 
           help -  This piece of text <br> 
           about - About me <br>
+          why - Why does this exist <br>
           exit - Escape this madness <br>  
+      `;
+      break;
+    case 'why':
+      terminalOutput.innerHTML += `
+        Why does this exist? I don't know, I just thought it would be cool...<br>
+        Maybe I'll even put some cool features here one day :thinking_emoji: <br>
       `;
       break;
     case 'about':
       terminalOutput.innerHTML += `This is peak website:ing <br>
         Name: Joar <br>
-        Job: Student <br>
-        Hobbies: Things & Stuff <br>
+        Job: Student/Developer <br>
+        Primary studies: AI-related <br>
+        Hobbies: Programming, video games, star wars/trek, history, sauna. <br>
       `;
       break;
     case 'clear':

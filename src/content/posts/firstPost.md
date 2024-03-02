@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning", "web development", "frameworks"]
 ---
 
-![Graz](../../turbotest.jpg)
+![Graz](../../assets/turbotest.jpg)
 
 > Alright, so let's actually try to write something useful for once.
 

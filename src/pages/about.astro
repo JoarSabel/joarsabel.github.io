@@ -1,65 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import temppicture from "../assets/temppicture.png";
+import tempfiller from "../assets/tempfiller.png";
 
 const pageTitle = "About me, Joar";
-const pageDesc = "So, Who am I, really? (This page is a bit of a work-in-progress)";
+const htmlDesc = "So, Who am I, really? (This page is a bit of a work-in-progress)";
 const htmlTitle = "whoami";
-
-const identity: Record<string, any> = {
-  firstName: "Joar",
-  country: "Finland",
-  occupation: "Student / Full-stack developer",
-  hobbies: "Grand Strategy Games, History, Programming",
-};
-
-const skills: String[] = [
-  "PHP",
-  "Laravel",
-  "HTML",
-  "CSS",
-  "Vue",
-  "Typescript",
-  "JavaScript",
-  "Astro",
-];
-
-const finished: boolean = false;
-const goal: number = 2;
-
-const skillColor = "navy";
+const pageDesc = "The name's Joar, I'm software engineering student and developer, H2O enjoyer - in all its states, meta tag name spammer (Joar) and enjoyer of minimalism."
 ---
 
 <html lang="en">
-  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={pageDesc}>
-    <h2>... and more stuff!</h2>
-
-    <p>Who am I?</p>
-    <ul>
-      <li>
-        My name is {identity.firstName}.
-      </li>
-      <li>
-        I live in {identity.country} and I am a {identity.occupation}.
-      </li>
-      <li>
-        My hobbies include: {identity.hobbies}
-      </li>
-    </ul>
-
-    <p>Some of my skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill"> {skill} </li>)}
-    </ul>
-
-    {
-      goal === 2 ? (
-        <p> My goal is to finish this in 2 days </p>
-      ) : (
-        <p> My goal is not 2 days </p>
-      )
-    }
-    {finished && <p> I am finished with this! </p>}
-    <p>More stuff to come!</p>
+  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={htmlDesc}>
+    <div id="about-container" class="flex flex-col h-full w-full mt-5">
+      <div id="container-one" class="flex flex-row w-full p-4 md:p-0">
+        <div id="filler-one-one" class="w-1/6 hidden md:flex"></div>
+        <div id="propic" class="w-1/2 md:w-1/3">
+          <Image class="object-contain w-11/12 h-11/12 border-4 border-nord15 border-double rounded" src={temppicture} alt="temporary profile picture"/>
+        </div>
+        <div id="desc-cont-one" class="w-1/2 md:w-1/3 p-2 text-left border-l-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+          <div class="ml-4">
+            <h2 class="text-2xl text-nord11 dark:text-nord8 underline">Joar</h2>
+            <p>
+              Hello. It is I, Joar. And depending on whether or not I've managed to get a good picture taken and uploaded to this page, I'm either incredibly good-looking or a masterful artist. 
+              <br/> Other than either of those things, I am also a<span class="text-nord11 dark:text-nord8"> software engineer(ing student) and developer.</span> As per most standard software engineer curriculums I've studied a broad base during my bachelor's degree. And now, during my master's studies I've specialized more towards the field of <span class="text-lg text-red-600 italic">AI</span>, taking general machine learning, data science and even embedded AI courses.<br/> I've followed the rise of LLMs quite eagerly and try to follow developments in the field. I have worked in web-development as a full-stack developer, which I rather enjoyed <span class="italic text-nord11 dark:text-nord8">(PHP&Laravel gang)</span> as it presents a nice mix of "technical" and "aesthetic" work.
+            </p>
+          </div>
+        </div>
+        <div class="w-1/6 hidden md:flex"></div>
+      </div>
+      <div class="flex flex-row w-full my-10 p-4 md:p-0">
+        <div class="w-1/6 hidden md:flex"></div>
+        <div class="w-1/2 md:w-1/3 p-4 text-left border-r-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+          <h2 class="text-2xl text-nord14 underline">Free time</h2>
+          <p>
+            When I'm not studying or working I'm usually preoccupied with <span class="text-nord11">programming</span>, <span class="text-nord12">video games</span>, <span class="text-nord14">star wars and/or trek </span> <span class="italic">(which probably lands me quite high on the heretical rankings of both fandoms)</span>, map games which just act as a frontend for an giant excel sheet <span class="text-nord15">(Grand Strategy) </span> or just sitting in the sauna. <br> 
+          </p>
+          <h2 class="text-2xl text-nord14 underline">Get in Touch</h2>
+          <p>
+            There are no socials other than <a class="underline text-nord11" href="https://www.github.com/JoarSabel" target="_blank">GitHub</a> linked on this webpage yet but when there are, please feel free to contact me if you're interested in working together or just having a chat.
+          </p>
+        </div>
+        <div class="w-1/2 md:w-1/3 flex justify-end">
+          <Image class="object-contain w-11/12 h-11/12 border-4 border-nord10 border-double rounded" src={tempfiller} alt="temporary madness picture"/>
+        </div>
+        <div class="w-1/6 hidden md:flex"></div>
+      </div>
+    </div>
   </BaseLayout>
 
   <style define:vars="{{skillColor}}">
