@@ -13,12 +13,12 @@ const pageDesc = "The name's Joar, I'm software engineering student and develope
 <html lang="en">
   <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={htmlDesc}>
     <div id="about-container" class="flex flex-col h-full w-full mt-5">
-      <div id="container-one" class="flex flex-row w-full p-4 md:p-0">
+      <div id="container-one" class="flex flex-col md:flex-row w-full p-4 md:p-0">
         <div id="filler-one-one" class="w-1/6 hidden md:flex"></div>
-        <div id="propic" class="w-1/2 md:w-1/3">
+        <div id="propic" class="w-full md:w-1/3">
           <Image class="object-contain w-11/12 h-11/12 border-4 border-nord15 border-double rounded" src={temppicture} alt="temporary profile picture"/>
         </div>
-        <div id="desc-cont-one" class="w-1/2 md:w-1/3 p-2 text-left border-l-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+        <div id="desc-cont-one" class="w-full md:w-1/3 p-2 mt-6 md:mt-0 text-left border-l-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
           <div class="ml-4">
             <h2 class="text-2xl text-nord11 dark:text-nord8 underline">Joar</h2>
             <p>
@@ -29,9 +29,9 @@ const pageDesc = "The name's Joar, I'm software engineering student and develope
         </div>
         <div class="w-1/6 hidden md:flex"></div>
       </div>
-      <div class="flex flex-row w-full my-10 p-4 md:p-0">
+      <div class="flex flex-col md:flex-row w-full my-10 p-4 md:p-0">
         <div class="w-1/6 hidden md:flex"></div>
-        <div class="w-1/2 md:w-1/3 p-4 text-left border-r-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+        <div class="w-full md:w-1/3 p-4 text-left border-r-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
           <h2 class="text-2xl text-nord14 underline">Free time</h2>
           <p>
             When I'm not studying or working I'm usually preoccupied with <span class="text-nord11">programming</span>, <span class="text-nord12">video games</span>, <span class="text-nord14">star wars and/or trek </span> <span class="italic">(which probably lands me quite high on the heretical rankings of both fandoms)</span>, map games which just act as a frontend for an giant excel sheet <span class="text-nord15">(Grand Strategy) </span> or just sitting in the sauna. <br> 
@@ -41,7 +41,7 @@ const pageDesc = "The name's Joar, I'm software engineering student and develope
             There are no socials other than <a class="underline text-nord11" href="https://www.github.com/JoarSabel" target="_blank">GitHub</a> linked on this webpage yet but when there are, please feel free to contact me if you're interested in working together or just having a chat.
           </p>
         </div>
-        <div class="w-1/2 md:w-1/3 flex justify-end">
+        <div class="w-full md:w-1/3 mt-6 md:mt-0 flex justify-end">
           <Image class="object-contain w-11/12 h-11/12 border-4 border-nord10 border-double rounded" src={tempfiller} alt="temporary madness picture"/>
         </div>
         <div class="w-1/6 hidden md:flex"></div>
