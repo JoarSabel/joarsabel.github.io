@@ -29,7 +29,7 @@ go for the "new" kid on the block.
 
 ## Why another framework? 
 
-So, you might be thinking, just like I was, "Why do we need yet _another_ framework...". Well if you've somehow landed on this post 
+So, you might be thinking, just like I was, **"Why do we need yet _another_ framework..."**. Well if you've somehow landed on this post 
 instead of the excellently written [astro docs](https://docs.astro.build/en/concepts/why-astro/) then that's pretty cool and since
 you made the effort I'll try to do a quick summary.
 
@@ -37,7 +37,7 @@ As per the docs:
 > Astro is the web framework for building content-driven websites like blogs, marketing, and e-commerce.
 
 So this framework is explicitly made for more static content, it's made for people who want good search engine optimization (SEO)
-and fast load times. What is especially great about astro is that you can deploy it to Github pages if you're cheap like me, 
+and fast load times. What is especially great about astro is that you can deploy it to, for example, Github pages, if you're cheap like me, 
 but we will get to that. Just because its focus is on blogs, e-commmerce and such does not mean you can't work with it, in cooperation with 
 other UI frameworks, like React, Vue, and Svelte (HTMX not mentioned, it's so over?). I have not tried working with Astro 
 as part of another framework yet, but considering the generally high opinion of people regarding this framework I would bet 
@@ -49,11 +49,16 @@ But the feature that stood out to me the most, due to the nature of this website
 
 ## Content collections
 
-Let's talk a bit about this. Content collections are _great_ for any blog-like website or something similar. 
+Let's talk a bit about this. **Content collections are _great_ for any blog-like website or something similar**. 
 It provides an easy way to manage you markdown documents, like this post for example, and provide great means for organizing
 your frontmatter. It makes it easy to just write you blog post/marketing thing/other stuff as markdown and have it easily rendered. 
 The content collections can be easily ordered into sections by their directory structure, so one might have `blog/` and `newsletter/`
 which could then easily be retrieved as separate collections using Astro's content API.
 
---- 
-cont
+## Building with Astro & Conclusion
+
+Armed with this new knowledge, what is it like then, to acutally **build** with Astro? Well, in one word: **great**. I chose to follow along to the tutorial offered on the docs page which guides you through building a blog. I just added TailwindCSS and my own design ideas, but otherwise just followed the general gist of the tutorial. Then, when I was satisfied with a first version I followed their guide on deploying it to Github pages which is done through a [build action](https://docs.astro.build/en/guides/deploy/github/) and all of a sudden I had a functioning page with great performance and pretty SEO scores according to random websites I decided to look at.
+
+The documentation is great so if one ever wonders about some aspect of the framework it's pretty easy to find an answer. Furthermore I've gotta give a little shoutout to `ViewTransitions` which work and look great, they give you the option to have _cool and flashy_ animations when you click around your website! All in all, a quite pleasant developer experience, would use again if I had to make some static content. **:thumbs_up_emoji:**
+
+**:wq**
