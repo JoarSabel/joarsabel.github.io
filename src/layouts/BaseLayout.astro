@@ -15,7 +15,8 @@ const { pageTitle, pageDescription, htmlTitle, htmlDescription }: Props = Astro.
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="../src/assets/goblinBoi3232_v2.png" />
+  <link rel="shortcut icon" type="image/png" href="../src/assets/goblinBoi3232_v2.png" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={pageDescription || "This is a default description"} />
@@ -23,14 +24,14 @@ const { pageTitle, pageDescription, htmlTitle, htmlDescription }: Props = Astro.
   <meta name="og:description" content={pageDescription}/>
   <meta name="og:type" content="website"/>
   <meta name="og:url" content="https://joarsabel.github.io"/>
-  <meta name="og:img" content="TBI"/>
+  <meta name="og:img" content="../src/assets/goblinBoi3232_v2.png"/>
   <title>{pageTitle}</title>
   <ViewTransitions />
 </head>
 <body class="bg-nord5 dark:bg-nord1 dark:text-white">
   <div class="flex flex-col min-h-screen">
     <Navigation />
-    <main class="flex-grow flex flex-row h-full overflow-auto md:pt-[10vh] shadow-lg shadow-black">
+    <main class="flex-grow flex flex-row h-full overflow-auto md:pt-[78px] shadow-lg shadow-black">
       <div class="w-[15vw] hidden md:flex bg-gradient-to-l from-nord5 to-nord4 dark:bg-gradient-to-r dark:from-nord2 dark:to-nord1"></div>
       <div class="w-full h-full content-center justify-center text-center pt-6">
         <h1 transition:animate="slide" class="text-5xl text-center">{htmlTitle}</h1>
