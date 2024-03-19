@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import gitLogo from "../assets/gitLogoTransparent.png";
+import linkedInLogo from "../assets/linkedInLogo.png";
+import { Image } from "astro:assets";
 
 const pageTitle = "$HOME Page of Joar | Developer and Water Enjoyer";
 const pageDesc = `Welcome to the page! I am a software engineer, developer, map game enjoyer, water enjoyer and occasional stizparty-toastmaster.`;
@@ -21,7 +24,6 @@ const htmlTitle = "$HOME";
           <div class="mt-4">
             <a 
               href="about/"
-              target="_blank" 
               class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-t from-nord11 to-nord10 transition duration-300 ease-in-out"
             >
               More about me ->
@@ -35,7 +37,7 @@ const htmlTitle = "$HOME";
           <p class="text-black dark:text-slate-300">
             PHP&Laravel enjoyer. (Not legally or officially) Certified Vue-tiful Person. 
             General Web Development Enjoyer. Occasional AI Dabbler. Penguin Power. Learning to
-            design UI that does not act as sandpaper on the eyes
+            design UI that does not act as sandpaper on the eyes and soul.
           </p>
           <div class="mt-4">
             <a href="https://www.github.com/JoarSabel" 
@@ -55,7 +57,7 @@ const htmlTitle = "$HOME";
           </p>
           <div class="mt-4">
             <a href="blog/" class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-t from-nord14 to-nord10 transition duration-300 ease-in-out">
-              My lastest posts
+              My lastest thinks
             </a>
           </div>
         </div>
@@ -63,34 +65,45 @@ const htmlTitle = "$HOME";
     </div>
 
     <!--Section Separator-->
-    <div class="flex flex-col flex-warp sm:flex-row sm:mx-32">
+    <div class="flex flex-col flex-warp sm:flex-row sm:mx-32 h-full">
       <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
         <div class="border rounded-md border-nord15 p-6 text-center">
-          <h2 class="text-xl font-bold mb-3">Some Social Media Thing?</h2>
+          <h2 class="text-xl font-bold mb-3">Where Can You Find Me?</h2>
           <p class="text-black dark:text-slate-300">
-            This is a box where social media things will go in the future. I think.
+            I am not very big on social media, but I do have a LinkedIn and a GitHub account.
           </p>
-          <div class="mt-4">
+          <div class="flex flex-row mt-4 justify-center items-center">
             <a 
               href="https://www.github.com/JoarSabel" 
               target="_blank" 
-              class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-t from-nord15 to-nord10 transition duration-300 ease-in-out"
             >
-              Connect with me
+              <div class="flex flex-row">
+                <Image class="object-contain w-28 h-28" src={gitLogo} alt="gitLogo"/>
+                <!-- <p class="hover:underline top-1/2">@JoarSabel</p> -->
+              </div>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/joar-sabel-2233a21a0/" 
+              target="_blank" 
+            >
+              <div class="flex flex-row">
+                <Image class="object-contain w-20 h-20 mt-4 " src={linkedInLogo} alt="gitLogo"/>
+                <!-- <p class="hover:underline mt-3">@JoarSabel</p> -->
+              </div>
             </a>
           </div>
         </div>
       </section>
-      <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 h-full my-2 grow-1 justify-center"> 
-        <div class="border rounded-md border-nord10 p-6 text-center">
-          <h2 class="text-xl font-bold mb-3">Other contact info/TBI</h2>
+      <section class="bg-nord4 dark:bg-nord1 flex-1 mx-3 min-h-full my-2 grow-1 justify-center"> 
+        <div class="border rounded-md border-nord10 p-6 text-center min-h-full">
+          <h2 class="text-xl font-bold mb-3">Other Contact Info</h2>
           <p class="text-black dark:text-slate-300">
-            Can't decide on this section yet but five boxes look good so I will have to have 5 of them.
+            This section is mostly here for the sake of uniformity and to fill the space. But now that you're reading it, here
+            you can find more information about me and get in touch with me. 
           </p>
           <div class="mt-4">
             <a 
-              href="https://www.github.com/JoarSabel" 
-              target="_blank" 
+              href="/about.html#contact" 
               class="bg-slate-500 text-white py-2 px-3 rounded-md hover:bg-gradient-to-t from-nord3 to-nord10 transition duration-300 ease-in-out"
             >
               Connect with me
