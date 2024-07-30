@@ -34,15 +34,19 @@ const { pageTitle, pageDescription, htmlTitle, htmlDescription }: Props =
 </head>
 <body class="bg-nord5 dark:bg-nord1 dark:text-white leading-relaxed">
   <div class="flex flex-col min-h-screen">
-    <Navigation />
+    <div class="w-full flex justify-center">
+      <Navigation />
+    </div>
     <main
-      class="flex-grow flex flex-row h-full overflow-auto md:pt-[78px] shadow-lg shadow-black"
+      class="flex-grow flex flex-row h-full overflow-auto shadow-lg shadow-black"
     >
       <div
         class="w-[15vw] hidden md:flex bg-gradient-to-l from-nord5 to-nord4 dark:bg-gradient-to-r dark:from-nord2 dark:to-nord1"
       >
       </div>
-      <div class="w-full h-full content-center justify-center text-center pt-6">
+      <div
+        class="w-full h-full content-center justify-center text-center py-32"
+      >
         <h1 transition:animate="slide" class="text-5xl text-center">
           {htmlTitle}
         </h1>

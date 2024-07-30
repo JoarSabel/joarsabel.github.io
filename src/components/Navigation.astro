@@ -3,59 +3,62 @@ import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <header
-  class="flex flex-row bg-nord4 dark:bg-nord1 border-b-2 border-nord2 px-2 py-1 md:fixed z-10 w-full shadow-md pb-1 text-center md:justify-center"
+  class="flex flex-row bg-nord4 dark:bg-nord1 border-b-2 border-nord2 px-2 py-1 md:fixed z-10 w-3/4 shadow-xl pb-1 text-center md:justify-center rounded-full mt-1"
 >
-  <nav>
-    <div class="hidden md:flex flex-row w-full">
-      <a
-        class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
-        href="/"
-      >
-        <span
-          class="bg-left-bottom bg-gradient-to-r from-nord11 to-nord11 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-        >
-          Home
-        </span>
-      </a>
-      <a
-        class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
-        href="/about/"
-      >
-        <span
-          class="bg-left-bottom bg-gradient-to-r from-nord10 to-nord10 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-        >
-          About
-        </span>
-      </a>
-      <div>
+  <nav class="w-full">
+    <div class="hidden md:flex flex-row w-full justify-between">
+      <div class="flex flex-row ml-6">
         <a
-          class="mr-2 text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
-          href="/">joar.a.developer</a
+          class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
+          href="/"
         >
-        <p class="italic text-slate-400">I'm a hwot?</p>
+          <span
+            class="bg-left-bottom bg-gradient-to-r from-nord11 to-nord11 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+          >
+            Home
+          </span>
+        </a>
+        <a
+          class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
+          href="/about/"
+        >
+          <span
+            class="bg-left-bottom bg-gradient-to-r from-nord10 to-nord10 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+          >
+            About
+          </span>
+        </a>
       </div>
-      <a
-        class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
-        href="/blog/"
-      >
-        <span
-          class="bg-left-bottom bg-gradient-to-r from-nord15 to-nord15 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+      <div class="content-center">
+        <a
+          class="text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
+          href="/">JS</a
         >
-          Blog
-        </span>
-      </a>
-      <a
-        class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
-        href="/term/"
-      >
-        <span
-          class="bg-left-bottom bg-gradient-to-r from-nord14 to-nord14 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+      </div>
+      <div class="flex flex-row mr-6">
+        <a
+          class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
+          href="/blog/"
         >
-          Term
-        </span>
-      </a>
-      <div class="mt-2 mb-3 pt-2">
-        <ThemeIcon />
+          <span
+            class="bg-left-bottom bg-gradient-to-r from-nord15 to-nord15 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+          >
+            Blog
+          </span>
+        </a>
+        <a
+          class="group text-2xl mr-2 p-1 mt-2 mb-3 pt-2 transition-all duration-300 ease-in-out"
+          href="/term/"
+        >
+          <span
+            class="bg-left-bottom bg-gradient-to-r from-nord14 to-nord14 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+          >
+            Term
+          </span>
+        </a>
+        <div class="mt-2 mb-3 pt-2">
+          <ThemeIcon />
+        </div>
       </div>
     </div>
 

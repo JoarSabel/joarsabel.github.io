@@ -5,33 +5,60 @@ import temppicture from "../assets/temppicture.png";
 import tempfiller from "../assets/tempfiller.png";
 
 const pageTitle = "About me, Joar";
-const htmlDesc = "So, Who am I, really? (This page is a bit of a work-in-progress)";
+const htmlDesc =
+  "So, Who am I, really? (This page is a bit of a work-in-progress)";
 const htmlTitle = "whoami";
-const pageDesc = "The name's Joar, I'm software engineering student and developer, H2O enjoyer - in all its states, meta tag name spammer (Joar) and enjoyer of minimalism."
+const pageDesc =
+  "The name's Joar, I'm software engineering student and developer, H2O enjoyer - in all its states, meta tag name spammer (Joar) and enjoyer of minimalism.";
 ---
 
 <html lang="en">
-  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={htmlDesc}>
+  <BaseLayout
+    htmlTitle={htmlTitle}
+    pageDescription={pageDesc}
+    pageTitle={pageTitle}
+    htmlDescription={htmlDesc}
+  >
     <div id="about-container" class="flex flex-col h-full w-full mt-5">
-      <div id="container-one" class="flex flex-col md:flex-row w-full p-4 md:p-0">
+      <div
+        id="container-one"
+        class="flex flex-col md:flex-row w-full p-4 md:p-0"
+      >
         <div id="filler-one-one" class="w-1/6 hidden md:flex"></div>
         <div id="propic" class="w-full md:w-1/3">
-          <Image class="object-contain w-11/12 h-11/12 border-4 border-nord15 border-double rounded" src={temppicture} alt="temporary profile picture"/>
+          <Image
+            class="object-contain w-11/12 h-11/12 border-4 border-nord15 border-double rounded"
+            src={temppicture}
+            alt="temporary profile picture"
+          />
         </div>
-        <div id="desc-cont-one" class="w-full md:w-1/3 p-2 mt-6 md:mt-0 text-left border-l-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+        <div
+          id="desc-cont-one"
+          class="w-full md:w-1/3 p-2 mt-6 md:mt-0 text-left border-l-2 border-black dark:border-white bg-nord4 dark:bg-nord2"
+        >
           <div class="ml-4">
             <h2 class="text-2xl text-nord11 dark:text-nord8">Joar</h2>
             <p>
-              Hello. It is I, Joar. And depending on whether or not I've managed to get a good picture taken and uploaded to this page, I'm either incredibly good-looking or a masterful artist. 
-              <br/> Other than either of those things, I am also a software engineer(ing student) and developer.
-            </p> 
+              Hello. I am Joar. And depending on whether or not I've managed to
+              get a good picture taken and uploaded to this page, I'm either
+              incredibly good-looking or a masterful artist.
+              <br /> I am also a software engineer(ing student) and developer.
+            </p>
             <h3 class="text-xl my-2 text-nord11 dark:text-nord8">Studies</h3>
             <p>
-              As per most standard software engineer curriculums I've studied a broad base during my bachelor's degree. And now, during my master's studies I've specialized more towards the field of <span class="text-lg text-red-600 italic">AI</span>, taking general machine learning, data science and even embedded AI courses.<br/>
+              As per most standard software engineer curriculums I've studied a
+              broad base during my bachelor's degree. And now, during my
+              master's studies I've specialized more towards the field of <span
+                class="text-lg text-red-600 italic">AI</span
+              >, taking general machine learning, data science and even embedded
+              AI courses.<br />
             </p>
             <h3 class="text-xl my-2 text-nord11 dark:text-nord8">Interests</h3>
             <p>
-              I've followed the rise of LLMs quite eagerly and try to follow developments in the field. I have worked in web-development as a full-stack developer, which I rather enjoyed (PHP&Laravel gang) as it presents a nice mix of "technical" and "aesthetic" work.
+              I've followed the rise of LLMs quite eagerly and try to follow
+              developments in the field. I work in web-development as a
+              full-stack developer, which I rather enjoy (PHP&Laravel gang) as
+              it presents a nice mix of "technical" and "aesthetic" work.
             </p>
           </div>
         </div>
@@ -39,21 +66,50 @@ const pageDesc = "The name's Joar, I'm software engineering student and develope
       </div>
       <div class="flex flex-col md:flex-row w-full my-10 p-4 md:p-0">
         <div class="w-1/6 hidden md:flex"></div>
-        <div class="w-full md:w-1/3 p-4 text-left border-r-2 border-black dark:border-white bg-nord4 dark:bg-nord2">
+        <div
+          class="w-full md:w-1/3 p-4 text-left border-r-2 border-black dark:border-white bg-nord4 dark:bg-nord2"
+        >
           <h2 class="text-2xl text-nord14 underline">Free time</h2>
           <p>
-            When I'm not studying or working I'm usually preoccupied with <span class="text-nord11">programming</span>, <span class="text-nord12">video games</span>, <span class="text-nord14">star wars and/or trek </span> <span class="italic">(which probably lands me quite high on the heretical rankings of both fandoms)</span>, map games which just act as a frontend for an giant excel sheet <span class="text-nord15">(Grand Strategy) </span> or just sitting in the sauna. <br> 
+            When I'm not studying or working I'm usually preoccupied with <span
+              class="text-nord11">programming</span
+            >, <span class="text-nord12">video games</span>, <span
+              class="text-nord14"
+              >star wars and/or trek
+            </span>
+            <span class="italic"
+              >(which probably lands me quite high on the heretical rankings of
+              both fandoms)</span
+            >, map games which just act as a frontend for an giant excel sheet <span
+              class="text-nord15"
+              >(Grand Strategy)
+            </span> or just sitting in the sauna. <br />
           </p>
-          <h2 class="text-2xl text-nord14 underline" id="contact">Get in Touch</h2>
+          <h2 class="text-2xl text-nord14 underline" id="contact">
+            Get in Touch
+          </h2>
           <p>
-            There are no socials other than <a class="underline text-nord11" href="https://www.github.com/JoarSabel" target="_blank">GitHub</a> and <a class="underline text-nord7" href="https://www.linkedin.com/in/joar-sabel-2233a21a0/" target="_blank">LinkedIn</a> linked on this webpage yet. However, please feel free to contact me if you're interested in working together or just having a chat. 
-            <br><br>
-            If you want to email me you can do so at: <br>
-            <span class="underline">joar (dot) sabel (at) gmail (dot) com </span>
+            There are no socials other than <a
+              class="underline text-nord11"
+              href="https://www.github.com/JoarSabel"
+              target="_blank">GitHub</a
+            > and <a
+              class="underline text-nord7"
+              href="https://www.linkedin.com/in/joar-sabel-2233a21a0/"
+              target="_blank">LinkedIn</a
+            > linked on this webpage yet. However, please feel free to contact
+            me if you're interested in working together or just having a chat.
+            <br /><br />
+             If you want to email me you can do so at: <br />
+            <span class="underline">joar (dot) sabel (at) gmail (dot) com</span>
           </p>
         </div>
         <div class="w-full md:w-1/3 mt-6 md:mt-0 flex justify-end">
-          <Image class="object-contain w-11/12 h-11/12 border-4 border-nord10 border-double rounded" src={tempfiller} alt="temporary madness picture"/>
+          <Image
+            class="object-contain w-11/12 h-11/12 border-4 border-nord10 border-double rounded"
+            src={tempfiller}
+            alt="temporary madness picture"
+          />
         </div>
         <div class="w-1/6 hidden md:flex"></div>
       </div>
@@ -66,4 +122,6 @@ const pageDesc = "The name's Joar, I'm software engineering student and develope
       font-weight: bold;
     }
   </style>
+
+
 </html>
