@@ -15,22 +15,22 @@ const htmlTitle = "Greetings, I'm Joar!";
   <!--htmlDescription={pageDesc}-->
   <BaseLayout pageDescription={pageDesc} pageTitle={pageTitle}>
     <div class="min-h-[90vh] w-full flex flex-row justify-center items-center">
-      <div class="flex flex-col text-left pr-32">
+      <div class="flex flex-col sm:text-left text-center sm:pr-32 mx-4">
         <a
           transition:animate={slide({ duration: "0.25s" })}
-          class="text-8xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
+          class="sm:text-8xl text-5xl p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
         >
           joar
         </a>
         <a
           transition:animate={slide({ duration: "0.5s" })}
-          class="text-8xl ml-16 p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
+          class="sm:text-8xl text-5xl sm:ml-16 p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
         >
           a
         </a>
         <a
           transition:animate={slide({ duration: "0.75s" })}
-          class="text-8xl ml-18 p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
+          class="sm:text-8xl text-5xl sm:ml-18 p-1 font-mono text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600"
         >
           developer
         </a>
