@@ -1,36 +1,47 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 
 const htmlTitle = "Blog";
-const pageDesc = 
-  `
+const pageDesc = `
     A collection of thinkeroos about just about anything 
     related to something I am interested in at the moment.
     There will be no guarantee of quality nor of quantity,
     these are but my loosely connected ramblings
   `;
-const pageTitle = "Blog Section | cat my_thoughts.txt"
+const pageTitle = "Blog Section | cat my_thoughts.txt";
 
 const allPosts = await getCollection("posts");
 ---
 
 <html lang="en">
-  <BaseLayout htmlTitle={htmlTitle} pageDescription={pageDesc} pageTitle={pageTitle} htmlDescription={pageDesc}>
+  <BaseLayout
+    htmlTitle={htmlTitle}
+    pageDescription={pageDesc}
+    pageTitle={pageTitle}
+    htmlDescription={pageDesc}
+  >
     <div>
-      <p>If you are looking for a post with a specific tag/content type, please check out the <a class="underline" href="/tags/">tag index</a></p>
+      <p>
+        If you are looking for a post with a specific tag/content type, please
+        check out the <a class="underline" href="/tags/">tag index</a>
+      </p>
       <h2 class="flex-1 mt-12 text-2xl">Posts so far:</h2>
       <div class="flex flex-row justify-center content-center">
         <div class="flex-1 w-1/4"></div>
         <ul class="flex-3 list-none m-4 p-0 grow">
-          {allPosts.map((post: any) => <BlogPostCard 
-            url={`/posts/${post.slug}/`} 
-            title={post.data.title} 
-            description={post.data.description} 
-            pubDate={post.data.pubDate}
-            tags={post.data.tags}
-          />)}
+          {
+            allPosts.map((post: any) => (
+              <BlogPostCard
+                url={`/posts/${post.slug}/`}
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                tags={post.data.tags}
+              />
+            ))
+          }
         </ul>
         <div class="flex-1 w-1/4"></div>
       </div>

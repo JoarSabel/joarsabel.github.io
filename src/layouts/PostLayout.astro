@@ -7,27 +7,40 @@ const { frontmatter } = Astro.props;
 
 <html lang="en">
   <BaseLayout pageTitle={frontmatter.title} htmlTitle={frontmatter.title}>
-    <br>
+    <br />
     <article class="flex flex-col px-8 md:px-[6rem] text-left mb-6">
       <div class="flex flex-row mb-8">
         <div class="flex-1 w-1/3"></div>
         <div class="flex-3 flex flex-col left-0 md:w-2/3 text-left">
-          <p class="text-nord11"><span class="underline mr-2">Written by:</span> {frontmatter.author}</p>
-          <p class="text-nord12"><span class="underline mr-2">Published on:</span> {frontmatter.pubDate.toString().slice(0,16)}</p>
-          <p class="text-nord14" class="italic"><span class="underline mr-2">Description:</span> {frontmatter.description}</p>
+          <p class="text-nord11">
+            <span class="underline mr-2">Written by:</span>
+            {frontmatter.author}
+          </p>
+          <p class="text-nord12">
+            <span class="underline mr-2">Published on:</span>
+            {frontmatter.pubDate.toString().slice(0, 16)}
+          </p>
+          <p class="text-nord14" class="italic">
+            <span class="underline mr-2">Description:</span>
+            {frontmatter.description}
+          </p>
           <div class="flex flex-row flex-wrap mt-1">
-            <p class="text-nord15 mt-2"><span class="underline mr-2">Tags:</span></p>
-            {frontmatter.tags.map((tag: string) => (
+            <p class="text-nord15 mt-2">
+              <span class="underline mr-2">Tags:</span>
+            </p>
+            {
+              frontmatter.tags.map((tag: string) => (
                 <p class="text-nord15 px-2 mx-1 my-1 p-0.5 border border-nord15 rounded hover:scale-110">
                   <a href={`/tags/${tag}`}>{tag}</a>
                 </p>
-              ))}
+              ))
+            }
           </div>
         </div>
         <div class="flex-1 w-1/3"></div>
       </div>
       <Prose>
-        <slot/>
+        <slot />
       </Prose>
     </article>
   </BaseLayout>
