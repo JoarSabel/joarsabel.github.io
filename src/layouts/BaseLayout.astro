@@ -2,62 +2,77 @@
 import { ViewTransitions } from "astro:transitions";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 export interface Props {
-  pageTitle: string;
-  pageDescription?: string;
-  htmlTitle?: string;
-  htmlDescription?: string;
+	pageTitle: string;
+	pageDescription?: string;
+	htmlTitle?: string;
+	htmlDescription?: string;
 }
 
 const { pageTitle, pageDescription, htmlTitle, htmlDescription }: Props =
-  Astro.props;
+	Astro.props;
 ---
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="/goblinBoi3232_v2.png" />
-  <link rel="shortcut icon" type="image/png" href="/goblinBoi3232_v2.png" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <meta
-    name="description"
-    content={pageDescription || "This is a default description"}
-  />
-  <meta name="og:title" content={pageTitle} />
-  <meta name="og:description" content={pageDescription} />
-  <meta name="og:type" content="website" />
-  <meta name="og:url" content="https://joarsabel.github.io" />
-  <meta name="og:img" content="/goblinBoi3232_v2.png" />
-  <title>{pageTitle}</title>
-  <ViewTransitions />
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="/goblinBoi3232_v2.png" />
+	<link
+		rel="shortcut icon"
+		type="image/png"
+		href="/goblinBoi3232_v2.png"
+	/>
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<meta
+		name="description"
+		content={pageDescription || "This is a default description"}
+	/>
+	<meta name="og:title" content={pageTitle} />
+	<meta name="og:description" content={pageDescription} />
+	<meta name="og:type" content="website" />
+	<meta name="og:url" content="https://joarsabel.github.io" />
+	<meta name="og:img" content="/goblinBoi3232_v2.png" />
+	<title>{pageTitle}</title>
+	<ViewTransitions />
 </head>
 <body class="bg-nord5 dark:bg-nord1 dark:text-white leading-relaxed">
-  <div class="flex flex-col min-h-screen">
-    <div class="w-full flex justify-center">
-      <Navigation />
-    </div>
-    <main
-      class="flex-grow flex flex-row h-full overflow-auto shadow-lg shadow-black"
-    >
-      <div
-        class="w-[15vw] hidden md:flex bg-gradient-to-l from-nord5 to-nord4 dark:bg-gradient-to-r dark:from-nord2 dark:to-nord1"
-      >
-      </div>
-      <div
-        class="w-full h-full content-center justify-center text-center sm:py-32 py-16"
-      >
-        <h1 transition:animate="slide" class="text-5xl text-center">
-          {htmlTitle}
-        </h1>
-        {htmlDescription && <p class="mt-4"> {htmlDescription} </p>}
-        <slot />
-      </div>
-      <div
-        class="w-[15vw] hidden md:flex bg-gradient-to-r from-nord5 to-nord4 dark:bg-gradient-to-l dark:from-nord2 dark:to-nord1"
-      >
-      </div>
-    </main>
-    <Footer />
-  </div>
+	<div class="flex flex-col min-h-screen">
+		<div class="w-full flex justify-center">
+			<Navigation />
+		</div>
+		<main
+			class="flex-grow flex flex-row h-full overflow-auto shadow-lg shadow-black"
+		>
+			<div
+				class="w-[15vw] hidden md:flex bg-gradient-to-l from-nord5 to-nord4 dark:bg-gradient-to-r dark:from-nord2 dark:to-nord1"
+			>
+			</div>
+			<div
+				class="w-full h-full content-center justify-center text-center sm:py-32 py-16"
+			>
+				<h1
+					transition:animate="slide"
+					class="text-5xl text-center"
+				>
+					{htmlTitle}
+				</h1>
+				{
+					htmlDescription && (
+						<p class="mt-4">
+							{" "}
+							{htmlDescription}{" "}
+						</p>
+					)
+				}
+				<slot />
+			</div>
+			<div
+				class="w-[15vw] hidden md:flex bg-gradient-to-r from-nord5 to-nord4 dark:bg-gradient-to-l dark:from-nord2 dark:to-nord1"
+			>
+			</div>
+		</main>
+		<Footer />
+	</div>
 </body>

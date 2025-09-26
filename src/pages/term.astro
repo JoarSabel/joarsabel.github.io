@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
+import "../styles/global.css";
 
 const pageTitle = "Terminal Mode";
-const posts = await getCollection('posts');
+const posts = await getCollection("posts");
 
 // leave this for future work I guess...
 const slugs = [...new Set(posts.map((post: any) => post.slug).flat())];
@@ -10,107 +11,129 @@ const titles = [...new Set(posts.map((post: any) => post.data.title).flat())];
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="min-w-full ">
-    <div id="terminal" class="overflow-scroll flex flex-col fixed justify-between bg-nord1 p-2 top-0 left-0 right-0 font-mono h-full">
-      <div class="text-nord4"id="terminal-output"></div>
-      <div class="flex flex-row">
-        <p class="w-[10rem] bg-nord1 text-purple-400 p-1">user@machine > </p>
-        <input class="bg-nord1 outline-none border-none text-nord4 font-mono w-full p-1" type="text" id="terminal-input" placeholder="Enter command...">
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body class="min-w-full">
+		<div
+			id="terminal"
+			class="overflow-scroll flex flex-col fixed justify-between bg-nord1 p-2 top-0 left-0 right-0 font-mono h-full"
+		>
+			<div class="text-nord4" id="terminal-output"></div>
+			<div class="flex flex-row">
+				<p
+					class="w-[10rem] bg-nord1 text-purple-400 p-1"
+				>
+					user@machine &gt
+				</p>
+				<input
+					class="bg-nord1 outline-none border-none text-nord4 font-mono w-full p-1"
+					type="text"
+					id="terminal-input"
+					placeholder="Enter command..."
+				/>
+			</div>
+		</div>
+	</body>
 </html>
 
 <script>
+	function initializeTerminal() {
+		const terminalInput = document.getElementById("terminal-input");
+		if (!terminalInput) {
+			return;
+		}
+		terminalInput.addEventListener("keydown", function (event) {
+			if (event.key === "Enter") {
+				const command = (event.target as any).value;
+				handleTerminalCommands(command);
+				(event.target as any).value = "";
+			}
+		});
+	}
 
-function initializeTerminal() {
-  const terminalInput = document.getElementById('terminal-input');
-  if (!terminalInput) {
-    return;
-  }
-  terminalInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      const command = (event.target as any).value;
-      handleTerminalCommands(command);
-      (event.target as any).value = '';
-    }
-  });
-}
+	function handleTerminalCommands(command: string) {
+		const terminalOutput =
+			document.getElementById("terminal-output");
+		if (!terminalOutput) {
+			return;
+		}
 
-function handleTerminalCommands(command: string) {
-  const terminalOutput = document.getElementById('terminal-output');
-  if (!terminalOutput) {
-    return;
-  }
-
-  terminalOutput.innerHTML += '<span class="text-purple-400"> user@machine > </span>' + command + '<br>'
-  switch (command.toLowerCase().trim()) {
-    case 'help':
-      terminalOutput.innerHTML += `Available commands: <br> 
+		terminalOutput.innerHTML +=
+			'<span class="text-purple-400"> user@machine > </span>' +
+			command +
+			"<br>";
+		switch (command.toLowerCase().trim()) {
+			case "help":
+				terminalOutput.innerHTML += `Available commands: <br> 
           help -  This piece of text <br> 
           about - About me <br>
           why - Why does this exist <br>
           clear - Clear the terminal <br>
           exit - Escape this madness <br>  
       `;
-      break;
-    case 'why':
-      terminalOutput.innerHTML += `
+				break;
+			case "why":
+				terminalOutput.innerHTML += `
         Why does this exist? I don't know, I just thought it would be cool...<br>
         Maybe I'll even put some cool features here one day :thinking_emoji: <br>
       `;
-      break;
-    case 'about':
-      terminalOutput.innerHTML += `This is still a bit of a wip<br>
+				break;
+			case "about":
+				terminalOutput.innerHTML += `This is still a bit of a wip<br>
         Name: Joar <br>
         Job: Student/Developer <br>
         Primary studies: AI-related <br>
         Hobbies: Programming, video games, star wars/trek, history, sauna. <br>
       `;
-      break;
-    case 'clear':
-      terminalOutput.innerHTML = '';
-      break;
-    case 'exit':
-      location.href = '/';
-      break;
-    default:
-      terminalOutput.innerHTML += `Command not found: '${command.trim()}'. Try 'help' for help<br>`;
-  }
-  terminalOutput.innerHTML += '<br>'
-}
+				break;
+			case "clear":
+				terminalOutput.innerHTML = "";
+				break;
+			case "exit":
+				location.href = "/";
+				break;
+			default:
+				terminalOutput.innerHTML += `Command not found: '${command.trim()}'. Try 'help' for help<br>`;
+		}
+		terminalOutput.innerHTML += "<br>";
+	}
 
-document.addEventListener('DOMContentLoaded', (_) => {
+	document.addEventListener("DOMContentLoaded", (_) => {
+		initializeTerminal();
+		const terminalOutput =
+			document.getElementById("terminal-output");
+		if (!terminalOutput) {
+			console.log("Terminal output not found");
+			return;
+		}
 
-  initializeTerminal();
-  const terminalOutput = document.getElementById('terminal-output');
-  if (!terminalOutput) {
-    console.log('Terminal output not found');
-    return;
-  }
-
-  terminalOutput.innerHTML += "<pre class='text-nord10'> ▄▄▄██▀▀▀▒█████   ▄▄▄       ██▀███  ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord11'>   ▒██  ▒██▒  ██▒▒████▄    ▓██ ▒ ██▒▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord12'>   ░██  ▒██░  ██▒▒██  ▀█▄  ▓██ ░▄█ ▒▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord13'>▓██▄██▓ ▒██   ██░░██▄▄▄▄██ ▒██▀▀█▄  ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ <br>";
-  terminalOutput.innerHTML += "<pre class='text-nord14'> ▓███▒  ░ ████▓▒░ ▓█   ▓██▒░██▓ ▒██▒  ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord15'> ▒▓▒▒░  ░ ▒░▒░▒░  ▒▒   ▓▒█░░ ▒▓ ░▒▓░  ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord16'> ▒ ░▒░    ░ ▒ ▒░   ▒   ▒▒ ░  ░▒ ░ ▒░    ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░<br>";
-  terminalOutput.innerHTML += "<pre class='text-nord8'> ░ ░ ░  ░ ░ ░ ▒    ░   ▒     ░░   ░   ░         ░     ░░   ░ ░      ░   <br>";
-  terminalOutput.innerHTML += "<pre class='text-nord9'> ░   ░      ░ ░        ░  ░   ░                 ░  ░   ░            ░   <br>";
-  terminalOutput.innerHTML += "Welcome to the terminal mode (JoarTerm)! Type 'help' for help</pre><br>";
-});
-document.addEventListener('astro:page-load', () => {
-  });
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord10'> ▄▄▄██▀▀▀▒█████   ▄▄▄       ██▀███  ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord11'>   ▒██  ▒██▒  ██▒▒████▄    ▓██ ▒ ██▒▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord12'>   ░██  ▒██░  ██▒▒██  ▀█▄  ▓██ ░▄█ ▒▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord13'>▓██▄██▓ ▒██   ██░░██▄▄▄▄██ ▒██▀▀█▄  ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ <br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord14'> ▓███▒  ░ ████▓▒░ ▓█   ▓██▒░██▓ ▒██▒  ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord15'> ▒▓▒▒░  ░ ▒░▒░▒░  ▒▒   ▓▒█░░ ▒▓ ░▒▓░  ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord16'> ▒ ░▒░    ░ ▒ ▒░   ▒   ▒▒ ░  ░▒ ░ ▒░    ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░<br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord8'> ░ ░ ░  ░ ░ ░ ▒    ░   ▒     ░░   ░   ░         ░     ░░   ░ ░      ░   <br>";
+		terminalOutput.innerHTML +=
+			"<pre class='text-nord9'> ░   ░      ░ ░        ░  ░   ░                 ░  ░   ░            ░   <br>";
+		terminalOutput.innerHTML +=
+			"Welcome to the terminal mode (JoarTerm)! Type 'help' for help</pre><br>";
+	});
+	document.addEventListener("astro:page-load", () => {});
 </script>
 
-<style>
-
-</style>
+<style></style>
